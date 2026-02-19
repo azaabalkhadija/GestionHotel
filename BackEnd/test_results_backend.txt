@@ -1,0 +1,58 @@
+
+> backend@1.0.0 test:coverage
+> jest --coverage
+
+PASS tests/authorize.test.js
+PASS tests/auth.middleware.test.js
+(node:45920) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45920) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+PASS tests/admin.chambre.routes.int.test.js
+  ● Console
+
+    console.log
+      Connexion à MongoDB réussie !
+
+      at log (app.js:16:23)
+
+-------------------------------|---------|----------|---------|---------|----------------------------------------------------------------------------------------------
+File                           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                                            
+-------------------------------|---------|----------|---------|---------|----------------------------------------------------------------------------------------------
+All files                      |   32.35 |     3.57 |   11.62 |   34.44 |                                                                                              
+ Back                          |   92.85 |       50 |   66.66 |   92.85 |                                                                                              
+  app.js                       |   92.85 |       50 |   66.66 |   92.85 | 17,30                                                                                        
+ Back/controllers              |    17.5 |        0 |       0 |   18.42 |                                                                                              
+  Accounts.js                  |    17.5 |        0 |       0 |   18.42 | 8,18-57,63-87,93-99                                                                          
+ Back/controllers/Admin        |   16.66 |        0 |       0 |   17.64 |                                                                                              
+  client.js                    |   16.66 |        0 |       0 |   17.64 | 5-21,27-33                                                                                   
+ Back/controllers/Client       |    9.72 |        0 |       0 |   10.44 |                                                                                              
+  reservation.js               |    9.72 |        0 |       0 |   10.44 | 10-30,34-78,84-192,197-210                                                                   
+ Back/controllers/Receptionist |    7.72 |        0 |       0 |    8.52 |                                                                                              
+  facture.js                   |    9.09 |        0 |       0 |      10 | 4-53,58-75                                                                                   
+  reservation.js               |    7.51 |        0 |       0 |    8.29 | 10-95,99-117,122-250,256-263,268-295,300-315,320-350,355-391,396-414,418-445,450-473,478-492 
+ Back/middlewares              |     100 |      100 |     100 |     100 |                                                                                              
+  auth.js                      |     100 |      100 |     100 |     100 |                                                                                              
+  authorize.js                 |     100 |      100 |     100 |     100 |                                                                                              
+ Back/models                   |   90.62 |        0 |       0 |   90.62 |                                                                                              
+  chambreModel.js              |     100 |      100 |     100 |     100 |                                                                                              
+  clientModel.js               |     100 |      100 |     100 |     100 |                                                                                              
+  factureModel.js              |     100 |      100 |     100 |     100 |                                                                                              
+  reservationModel.js          |   76.92 |        0 |       0 |   76.92 | 30-33                                                                                        
+  userModel.js                 |     100 |      100 |     100 |     100 |                                                                                              
+ Back/routes                   |     100 |      100 |     100 |     100 |                                                                                              
+  account.js                   |     100 |      100 |     100 |     100 |                                                                                              
+ Back/routes/Admin             |     100 |      100 |     100 |     100 |                                                                                              
+  chambre.js                   |     100 |      100 |     100 |     100 |                                                                                              
+  client.js                    |     100 |      100 |     100 |     100 |                                                                                              
+ Back/routes/Client            |     100 |      100 |     100 |     100 |                                                                                              
+  reservation.js               |     100 |      100 |     100 |     100 |                                                                                              
+ Back/routes/Receptionist      |     100 |      100 |     100 |     100 |                                                                                              
+  facture.js                   |     100 |      100 |     100 |     100 |                                                                                              
+  reservation.js               |     100 |      100 |     100 |     100 |                                                                                              
+-------------------------------|---------|----------|---------|---------|----------------------------------------------------------------------------------------------
+
+Test Suites: 3 passed, 3 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        4.173 s
+Ran all test suites.
