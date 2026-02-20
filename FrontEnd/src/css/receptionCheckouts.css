@@ -1,0 +1,176 @@
+/* src/css/receptionCheckouts.css */
+
+:root{
+  --hotel-navy: #0b2a3a;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rcout-page {
+  padding: 10px 10px 30px 10px;
+}
+
+.rcout-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.rcout-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.rcout-refresh {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--text-main);
+  transition: background 0.12s ease, border 0.12s ease;
+}
+
+.rcout-refresh:hover {
+  background: rgba(200, 160, 74, 0.06);
+  border-color: rgba(200, 160, 74, 0.35);
+}
+
+.rcout-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rcout-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 850;
+}
+
+.rcout-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.rcout-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.rcout-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* table */
+.rcout-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.rcout-table thead th {
+  text-align: left;
+  padding: 14px 10px; /* more breathing room like check-ins */
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 950;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(11, 42, 58, 0.015);
+  white-space: nowrap;
+}
+
+.rcout-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  font-weight: 750;
+  color: var(--text-main);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.rcout-table tbody tr:hover {
+  background: rgba(200, 160, 74, 0.06);
+}
+
+.rcout-strong {
+  font-weight: 950;
+}
+
+.rcout-action-col {
+  width: 220px;
+}
+
+/* badge */
+.rcout-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 950;
+  background: rgba(11, 42, 58, 0.10);
+  border: 1px solid rgba(11, 42, 58, 0.22);
+  color: var(--hotel-navy);
+}
+
+/* button (single style like check-ins) */
+.rcout-btn {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: background 0.12s ease, transform 0.05s ease, opacity 0.12s ease;
+  border: 1px solid rgba(200, 160, 74, 0.42);
+  background: rgba(200, 160, 74, 0.14);
+  color: var(--text-main);
+}
+
+.rcout-btn:hover {
+  background: rgba(200, 160, 74, 0.18);
+}
+
+.rcout-btn:active {
+  transform: translateY(1px);
+}
+
+.rcout-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rcout-footer {
+  margin-top: 10px;
+  padding: 0 6px 2px 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 850;
+}
+
+/* keep if you still use it somewhere */
+.rcout-btn-facture {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}

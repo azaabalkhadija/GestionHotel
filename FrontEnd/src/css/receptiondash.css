@@ -1,0 +1,269 @@
+/* src/css/receptiondash.css */
+/* Staff "hotel" theme: navy + gold accents, consistent with booking page */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rd2-page {
+  padding: 10px 10px 30px;
+}
+
+/* Header */
+.rd2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.rd2-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.rd2-subtitle {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-weight: 750;
+}
+
+/* Button */
+.rd2-btn {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: #fff;
+  transition: background 0.12s ease, opacity 0.12s ease, border 0.12s ease;
+}
+
+.rd2-btn:hover {
+  background: rgba(200, 160, 74, 0.06);
+  border-color: rgba(200, 160, 74, 0.35);
+}
+
+.rd2-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Top cards grid */
+.rd2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 992px) {
+  .rd2-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card base */
+.rd2-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium top accent (adds spacing automatically, not too close to title) */
+.rd2-card::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 14px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 58, 0.45),
+    rgba(200, 160, 74, 0.55)
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Link card hover */
+.rd2-linkcard {
+  text-decoration: none;
+  transition: transform 0.06s ease, box-shadow 0.12s ease;
+}
+
+.rd2-linkcard:hover {
+  transform: translateY(-1px);
+}
+
+/* Card content */
+.rd2-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px; /* space under accent */
+}
+
+.rd2-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(11, 42, 58, 0.06);
+  border: 1px solid rgba(200, 160, 74, 0.22);
+  color: var(--hotel-navy);
+  font-size: 18px;
+}
+
+.rd2-card-title {
+  font-weight: 950;
+  color: var(--text-main);
+  font-size: 16px;
+}
+
+.rd2-card-meta {
+  margin-top: 12px;
+}
+
+.rd2-chip {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+
+  background: rgba(200, 160, 74, 0.10);
+  border: 1px solid rgba(200, 160, 74, 0.22);
+  color: var(--hotel-navy);
+}
+
+/* Section */
+.rd2-section {
+  margin-top: 10px;
+}
+
+.rd2-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.rd2-section-header h3 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+}
+
+.rd2-viewall {
+  text-decoration: none;
+  font-weight: 900;
+  color: var(--hotel-navy);
+}
+
+.rd2-viewall:hover {
+  text-decoration: underline;
+}
+
+/* Alert */
+.rd2-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+/* Table card */
+.rd2-tablecard {
+  padding: 12px;
+}
+
+.rd2-empty {
+  padding: 16px;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.rd2-tablewrap {
+  overflow-x: auto;
+}
+
+.rd2-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.rd2-table th {
+  text-align: left;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 900;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(11, 42, 58, 0.02);
+}
+
+.rd2-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.rd2-strong {
+  font-weight: 950;
+}
+
+/* Status badge */
+.rd2-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.26);
+  font-size: 12px;
+  font-weight: 900;
+  color: #92400e;
+}
+
+/* Footer */
+.rd2-footer {
+  padding: 10px 6px 2px 6px;
+  color: var(--text-muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.rd2-footer a {
+  color: var(--hotel-navy);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.rd2-footer a:hover {
+  text-decoration: underline;
+}

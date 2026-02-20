@@ -1,0 +1,971 @@
+/* src/css/style.css */
+
+/******************************************************************
+  Cleaned CSS (Only what your current React pages use)
+  - Header desktop menu
+  - Home: Hero + Booking form + About + Services + Rooms preview + Search modal
+  - Footer component
+  - About page (breadcrumb + about page text + services list)
+  - Contact page (contact text + form + map)
+******************************************************************/
+
+/*----------------------------------------
+  Base / Reset
+----------------------------------------*/
+html,
+body {
+  height: 100%;
+  font-family: "Cabin", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: #111111;
+  font-weight: 400;
+  font-family: "Lora", serif;
+}
+
+h1 {
+  font-size: 70px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Cabin", sans-serif;
+  color: #6b6b6b;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0 0 15px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+/*----------------------------------------
+  Helpers
+----------------------------------------*/
+.section-title {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.section-title span {
+  font-size: 14px;
+  color: #dfa974;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 44px;
+  color: #19191a;
+  line-height: 58px;
+  margin-top: 10px;
+}
+
+.spad {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Buttons */
+.primary-btn {
+  display: inline-block;
+  font-size: 13px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  position: relative;
+}
+
+.primary-btn:after {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: #dfa974;
+  content: "";
+}
+
+/*----------------------------------------
+  Header (Desktop Only)
+----------------------------------------*/
+.menu-item {
+  position: relative;
+  z-index: 9;
+}
+.menu-item .logo {
+  padding: 25px 0;
+}
+
+.menu-item .logo a {
+  display: inline-block;
+}
+
+.menu-item .nav-menu {
+  text-align: right;
+}
+
+.menu-item .nav-menu .mainmenu {
+  display: inline-block;
+}
+
+.menu-item .nav-menu .mainmenu li {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-item .nav-menu .mainmenu li.active a:after {
+  opacity: 1;
+}
+
+.menu-item .nav-menu .mainmenu li:hover > a:after {
+  opacity: 1;
+}
+
+.menu-item .nav-menu .mainmenu li a {
+  font-size: 16px;
+  margin-right: 42px;
+  font-weight: 500;
+  display: inline-block;
+  padding: 27px 0;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.menu-item .nav-menu .mainmenu li a:after {
+  position: absolute;
+  left: 0;
+  top: 52px;
+  width: 100%;
+  height: 2px;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+/* Dropdown (Rooms sub menu) */
+.menu-item .nav-menu .mainmenu li:hover .dropdown {
+  top: 77px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-item .nav-menu .mainmenu li .dropdown {
+  position: absolute;
+  left: 0;
+  top: 97px;
+  width: 180px;
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0px 9px 15px rgba(25, 25, 26, 0.05);
+}
+
+.menu-item .nav-menu .mainmenu li .dropdown li {
+  list-style: none;
+  display: block;
+}
+
+.menu-item .nav-menu .mainmenu li .dropdown li a {
+  font-size: 16px;
+  display: block;
+  text-align: left;
+  padding: 8px 15px;
+  transition: all 0.3s;
+  margin-right: 0;
+}
+
+.menu-item .nav-menu .mainmenu li .dropdown li a:after {
+  display: none;
+}
+
+/* =========================================================
+   Header color variants (Client vs Admin/Reception)
+   Add class on <header>: header-client | header-staff
+========================================================= */
+
+/* ----- CLIENT (public) ----- */
+/* ✅ KEEP SAME AS YOU HAD */
+.header-section.header-client {
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(36, 11, 12, 0.05) 0px 12px 15px 0px;
+}
+
+.header-section.header-client .menu-item .nav-menu .mainmenu li a {
+  color: #19191a;
+}
+
+.header-section.header-client .menu-item .nav-menu .mainmenu li a:after {
+  background: #dfa974;
+}
+
+.header-section.header-client .menu-item .nav-menu .mainmenu li .dropdown {
+  background: #ffffff;
+}
+
+.header-section.header-client .menu-item .nav-menu .mainmenu li .dropdown li a {
+  color: #19191a;
+}
+
+.header-section.header-client .menu-item .nav-menu .mainmenu li .dropdown li a:hover {
+  color: #dfa974;
+}
+
+/* ----- ADMIN + RECEPTION (staff) ----- */
+/* ✅ hotel-classy staff theme: navy + gold accent */
+.header-section.header-staff {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.92) 0%,
+    rgba(16, 56, 76, 0.88) 100%
+  );
+  border-bottom: 1px solid rgba(200, 160, 74, 0.25);
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.18);
+}
+
+/* Staff links */
+.header-section.header-staff .menu-item .nav-menu .mainmenu li a {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 650;
+}
+
+/* Underline accent (gold) */
+.header-section.header-staff .menu-item .nav-menu .mainmenu li a:after {
+  background: #c8a04a;
+  height: 2px;
+  border-radius: 99px;
+}
+
+/* Optional: active item a bit brighter */
+.header-section.header-staff .menu-item .nav-menu .mainmenu li.active > a {
+  color: #ffffff;
+}
+
+/* Dropdown (staff) */
+.header-section.header-staff .menu-item .nav-menu .mainmenu li .dropdown {
+  background: #0b1a24;
+  border: 1px solid rgba(200, 160, 74, 0.22);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.header-section.header-staff .menu-item .nav-menu .mainmenu li .dropdown li a {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.header-section.header-staff .menu-item .nav-menu .mainmenu li .dropdown li a:hover {
+  background: rgba(200, 160, 74, 0.10);
+  color: #ffffff;
+}
+
+/* Logout button (works for both Admin & Reception) */
+.header-logout-btn {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 160, 74, 0.40);
+  background: rgba(200, 160, 74, 0.10);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.header-logout-btn:hover {
+  background: rgba(200, 160, 74, 0.16);
+  border: 1px solid rgba(200, 160, 74, 0.55);
+}
+
+.header-logout-btn:active {
+  transform: translateY(1px);
+}
+
+/* Make sure logout button looks correct inside menu */
+.header-section .menu-item .nav-menu .mainmenu li button.header-logout-btn {
+  margin-right: 42px; /* match links spacing */
+}
+
+/* On smaller widths, spacing can be too large */
+@media (max-width: 1200px) {
+  .header-section .menu-item .nav-menu .mainmenu li a {
+    margin-right: 26px;
+  }
+  .header-section .menu-item .nav-menu .mainmenu li button.header-logout-btn {
+    margin-right: 26px;
+  }
+}
+
+/*----------------------------------------
+  Hero + Booking Form
+----------------------------------------*/
+.hero-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-text {
+  padding-top: 145px;
+}
+
+.hero-text h1 {
+  font-size: 80px;
+  line-height: 90px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 28px;
+  margin-bottom: 35px;
+}
+
+.booking-form {
+  background: #ffffff;
+  padding: 44px 40px 50px 40px;
+  border-radius: 4px;
+}
+
+.booking-form h3 {
+  color: #19191a;
+  margin-bottom: 36px;
+}
+
+.booking-form form .check-date {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.booking-form form .check-date label {
+  font-size: 14px;
+  color: #707079;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.booking-form form .check-date input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-left: 20px;
+}
+
+.booking-form form .check-date i {
+  color: #dfa974;
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+}
+
+.booking-form form .select-option {
+  margin-bottom: 15px;
+}
+
+.booking-form form .select-option label {
+  font-size: 14px;
+  color: #707079;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.booking-form form .select-option select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-left: 20px;
+  background: #fff;
+}
+
+.booking-form form button {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid #dfa974;
+  border-radius: 2px;
+  color: #dfa974;
+  font-weight: 500;
+  background: transparent;
+  width: 100%;
+  height: 46px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.hero-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.hero-slider .hs-item {
+  height: 100%;
+}
+
+/*----------------------------------------
+  About Us (Home)
+----------------------------------------*/
+.about-text {
+  text-align: center;
+  padding: 0 35px;
+}
+
+.about-text p {
+  color: #595960;
+  font-weight: 500;
+}
+
+.about-text p.f-para {
+  margin-bottom: 10px;
+}
+
+.about-text p.s-para {
+  margin-bottom: 35px;
+}
+
+.about-text .about-btn {
+  color: #19191a;
+}
+
+.about-pic img {
+  min-width: 100%;
+}
+
+/*----------------------------------------
+  Services (Home)
+----------------------------------------*/
+.services-section {
+  padding-bottom: 60px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.services-section .section-title {
+  margin-bottom: 36px;
+}
+
+.service-item {
+  text-align: center;
+  padding: 30px 35px 18px;
+  transition: all 0.3s;
+}
+
+.service-item:hover {
+  background: #dfa974;
+}
+
+.service-item:hover i,
+.service-item:hover h4,
+.service-item:hover p {
+  color: #ffffff;
+}
+
+.service-item i {
+  display: inline-block;
+  color: #dfa974;
+  transition: all 0.3s;
+}
+
+.service-item h4 {
+  color: #19191a;
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.service-item p {
+  color: #707079;
+  transition: all 0.3s;
+}
+
+/*----------------------------------------
+  Home Rooms Preview
+----------------------------------------*/
+.hp-room-items {
+  margin-left: -15px;
+  margin-right: -15px;
+  overflow: hidden;
+}
+
+.hp-room-items .hp-room-item {
+  height: 600px;
+  margin-right: -15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hp-room-items .hp-room-item:hover .hr-text {
+  bottom: 135px;
+}
+
+.hp-room-items .hp-room-item:hover .hr-text h2 {
+  margin-bottom: 30px;
+}
+
+.hp-room-items .hp-room-item .hr-text {
+  position: absolute;
+  left: 45px;
+  right: 25px;
+  bottom: -250px;
+  transition: all 0.5s;
+}
+
+.hp-room-items .hp-room-item .hr-text h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hp-room-items .hp-room-item .hr-text h2 {
+  color: #dfa974;
+  font-weight: 700;
+  margin-bottom: 90px;
+  transition: all 0.2s;
+}
+
+.hp-room-items .hp-room-item .hr-text h2 span {
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.hp-room-items .hp-room-item .hr-text table {
+  margin-bottom: 30px;
+}
+
+.hp-room-items .hp-room-item .hr-text table tbody tr td {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 36px;
+}
+
+.hp-room-items .hp-room-item .hr-text table tbody tr td.r-o {
+  width: 120px;
+}
+
+.hp-room-items .hp-room-item .hr-text .primary-btn:after {
+  background: #ffffff;
+}
+
+/*----------------------------------------
+  Footer (Footer.jsx)
+----------------------------------------*/
+.footer-section {
+  background: #222736;
+}
+
+.footer-section .footer-text {
+  padding: 80px 0 30px;
+}
+
+.footer-section .footer-text .ft-about {
+  margin-bottom: 30px;
+}
+
+.footer-section .footer-text .ft-about .logo {
+  margin-bottom: 20px;
+}
+
+.footer-section .footer-text .ft-about .logo a {
+  display: inline-block;
+}
+
+.footer-section .footer-text .ft-about p {
+  color: #aaaab3;
+  margin-bottom: 20px;
+}
+
+/* Contact column */
+.footer-section .footer-text .ft-contact {
+  margin-bottom: 30px;
+}
+
+.footer-section .footer-text .ft-contact h6 {
+  font-size: 14px;
+  color: #dfa974;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 20px;
+}
+
+.footer-section .footer-text .ft-contact ul li {
+  font-size: 16px;
+  color: #aaaab3;
+  line-height: 32px;
+  list-style: none;
+}
+
+/* Newsletter column */
+.footer-section .footer-text .ft-newslatter h6 {
+  font-size: 14px;
+  color: #dfa974;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 20px;
+}
+
+.footer-section .footer-text .ft-newslatter p {
+  color: #aaaab3;
+  margin-bottom: 20px;
+}
+
+.footer-section .footer-text .ft-newslatter .fn-form {
+  position: relative;
+}
+
+.footer-section .footer-text .ft-newslatter .fn-form input {
+  width: 100%;
+  height: 50px;
+  border-radius: 2px;
+  background: #393d4a;
+  border: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #707079;
+}
+
+.footer-section .footer-text .ft-newslatter .fn-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 16px;
+  background: #dfa974;
+  color: #ffffff;
+  padding: 0 16px;
+  height: 50px;
+  border: none;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+}
+
+/* Bottom bar */
+.footer-section .copyright-option {
+  background: rgba(16, 20, 31, 0.2);
+  padding: 20px 0;
+}
+
+.footer-section .copyright-option ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 34px;
+}
+
+.footer-section .copyright-option ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-section .copyright-option ul li a {
+  font-size: 16px;
+  color: #aaaab3;
+}
+
+.footer-section .copyright-option .co-text {
+  font-size: 16px;
+  color: #707079;
+  text-align: right;
+}
+
+/*----------------------------------------
+  About Page (USED by About.jsx only)
+  - Breadcrumb
+  - About page text + services list
+  - About page services cards (3 background images)
+----------------------------------------*/
+
+/* Breadcrumb */
+.breadcrumb-section {
+  padding-top: 28px;
+  padding-bottom: 80px;
+}
+
+.breadcrumb-text {
+  text-align: center;
+}
+
+.breadcrumb-text h2 {
+  font-size: 44px;
+  color: #19191a;
+  margin-bottom: 12px;
+}
+
+.breadcrumb-text .bt-option a {
+  display: inline-block;
+  font-size: 18px;
+  color: #19191a;
+  margin-right: 20px;
+  position: relative;
+  font-weight: 500;
+}
+
+.breadcrumb-text .bt-option a:hover {
+  color: #dfa974;
+}
+
+.breadcrumb-text .bt-option span {
+  display: inline-block;
+  font-size: 18px;
+  color: #aaaab3;
+}
+
+/* About section wrapper */
+.aboutus-page-section {
+  padding-top: 0;
+  padding-bottom: 70px;
+}
+
+.about-page-text {
+  margin-bottom: 65px;
+}
+
+.about-page-text .ap-title {
+  margin-bottom: 30px;
+}
+
+.about-page-text .ap-title h2 {
+  font-size: 44px;
+  color: #19191a;
+  margin-bottom: 18px;
+}
+
+.about-page-text .ap-title p {
+  font-size: 18px;
+  color: #707079;
+  line-height: 28px;
+}
+
+/* Services list with icons */
+.about-page-text .ap-services li {
+  list-style: none;
+  font-size: 20px;
+  color: #707079;
+  line-height: 42px;
+}
+
+.about-page-text .ap-services li i {
+  color: #dfa974;
+  margin-right: 8px;
+}
+
+/* ===== About Page Services (3 image cards) — FIXED ===== */
+.about-page-services {
+  margin-top: 30px;
+}
+
+.ap-service-item {
+  height: 420px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  background-color: #e9ecef;
+}
+
+/* overlay like Sona */
+.ap-service-item::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* text at bottom */
+.ap-service-item .api-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 30px;
+}
+
+.ap-service-item .api-text h3 {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0;
+}
+
+/*----------------------------------------
+  Contact Page (plain centered, no card)
+----------------------------------------*/
+.contact-section.contact-plain {
+  padding-top: 0; /* breadcrumb already adds spacing */
+}
+
+.contact-section.contact-plain .contact-text {
+  margin-bottom: 20px;
+}
+
+.contact-tablewrap--plain {
+  margin-top: 18px;
+}
+
+.contact-section.contact-plain .contact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-section.contact-plain .contact-table tbody tr td {
+  font-size: 16px;
+  color: #19191a;
+  line-height: 34px;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.contact-section.contact-plain .contact-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.contact-section.contact-plain .contact-table tbody tr td.c-o {
+  color: #707079;
+  width: 120px;
+  font-weight: 800;
+}
+
+/*----------------------------------------
+  Minimal responsive (only for the used parts)
+----------------------------------------*/
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .breadcrumb-text h2,
+  .about-page-text .ap-title h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .ap-service-item {
+    height: 320px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .hp-room-items .hp-room-item .hr-text {
+    bottom: -322px;
+  }
+
+  .hp-room-items .hp-room-item:hover .hr-text {
+    bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-text {
+    margin-bottom: 40px;
+  }
+
+  .about-text {
+    margin-bottom: 30px;
+  }
+
+  .about-pic img {
+    margin-bottom: 20px;
+  }
+
+  .footer-section .copyright-option ul {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-section .copyright-option .co-text {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about-text .section-title h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .hp-room-items {
+    margin: 0 -5px;
+  }
+
+  .hp-room-item {
+    margin-bottom: 10px;
+  }
+
+  .search-model-form input {
+    width: 100%;
+    font-size: 28px;
+  }
+}

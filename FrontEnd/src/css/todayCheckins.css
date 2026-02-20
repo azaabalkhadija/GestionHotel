@@ -1,0 +1,200 @@
+/* src/css/todayCheckins.css */
+
+:root{
+  --hotel-navy: #0b2a3a;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.checkins-page {
+  padding: 10px 10px 30px 10px;
+}
+
+.checkins-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.checkins-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.btn-refresh {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--text-main);
+  transition: background 0.12s ease, border 0.12s ease;
+}
+
+.btn-refresh:hover {
+  background: rgba(200, 160, 74, 0.06);
+  border-color: rgba(200, 160, 74, 0.35);
+}
+
+.btn-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.checkins-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 850;
+}
+
+.checkins-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 12px;
+}
+
+.checkins-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* table */
+.checkins-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+
+.checkins-table thead th {
+  text-align: left;
+  padding: 14px 10px; /* more breathing room */
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 950;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(11, 42, 58, 0.015);
+  white-space: nowrap;
+}
+
+.checkins-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  color: var(--text-main);
+  font-weight: 750;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.checkins-table tbody tr:hover {
+  background: rgba(200, 160, 74, 0.06);
+}
+
+.cell-strong {
+  font-weight: 950;
+}
+
+.col-action {
+  width: 240px;
+}
+
+/* badge */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.badge-confirmed {
+  background: rgba(11, 42, 58, 0.10);
+  border: 1px solid rgba(11, 42, 58, 0.22);
+  color: var(--hotel-navy);
+}
+
+/* actions */
+.action-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-checkin,
+.btn-cancel {
+  flex: 1;
+  height: 40px;           /* same height */
+  padding: 0 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: background 0.12s ease, transform 0.05s ease, opacity 0.12s ease;
+}
+
+.btn-checkin:active,
+.btn-cancel:active {
+  transform: translateY(1px);
+}
+
+/* Check-in */
+.btn-checkin {
+  border: 1px solid rgba(200, 160, 74, 0.42);
+  background: rgba(200, 160, 74, 0.14);
+  color: var(--text-main);
+}
+
+.btn-checkin:hover {
+  background: rgba(200, 160, 74, 0.18);
+}
+
+.btn-checkin:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* No-show (cancel) */
+.btn-cancel {
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  background: rgba(220, 38, 38, 0.10);
+  color: #991b1b;
+}
+
+.btn-cancel:hover {
+  background: rgba(220, 38, 38, 0.16);
+}
+
+.btn-cancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.checkins-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 6px 2px 6px;
+  color: var(--text-muted);
+  font-weight: 850;
+  font-size: 13px;
+}

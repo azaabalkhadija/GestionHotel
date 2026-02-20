@@ -1,0 +1,266 @@
+/* src/css/admindash.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.ad2-page {
+  padding: 10px 10px 30px;
+}
+
+/* Header */
+.ad2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ad2-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.ad2-header p {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+/* Add room CTA */
+.ad2-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 16px;
+
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(200, 160, 74, 0.16) 0%,
+    rgba(11, 42, 58, 0.06) 100%
+  );
+
+  color: var(--text-main);
+  font-weight: 900;
+  box-shadow: var(--shadow-soft);
+}
+
+.ad2-cta:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(200, 160, 74, 0.22) 0%,
+    rgba(11, 42, 58, 0.08) 100%
+  );
+}
+
+.ad2-cta-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(11, 42, 58, 0.10);
+  border: 1px solid rgba(11, 42, 58, 0.14);
+  color: var(--hotel-navy);
+}
+
+.ad2-cta-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.ad2-cta-title {
+  font-weight: 950;
+}
+
+.ad2-cta-sub {
+  font-size: 12px;
+  color: var(--hotel-navy);
+  font-weight: 850;
+}
+
+/* Grid cards */
+.ad2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .ad2-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ad2-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ad2-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* tiny premium top accent */
+.ad2-card::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(11, 42, 58, 0.45), rgba(200, 160, 74, 0.55));
+  opacity: 0.65;
+}
+
+.ad2-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.06s ease;
+}
+
+.ad2-link:hover {
+  transform: translateY(-1px);
+}
+
+.ad2-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.ad2-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(200, 160, 74, 0.16);
+  border: 1px solid rgba(200, 160, 74, 0.30);
+  color: var(--hotel-navy);
+  font-size: 18px;
+}
+
+.ad2-title {
+  font-weight: 950;
+  color: var(--text-main);
+  font-size: 15px;
+}
+
+.ad2-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.ad2-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+
+  background: rgba(11, 42, 58, 0.08);
+  border: 1px solid rgba(11, 42, 58, 0.14);
+  color: var(--hotel-navy);
+}
+
+.ad2-count {
+  font-size: 22px;
+  font-weight: 950;
+  color: var(--text-main);
+}
+
+.ad2-hint {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 750;
+}
+
+/* Bottom actions */
+.ad2-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .ad2-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ad2-action-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: inherit;
+}
+
+.ad2-action-card:hover {
+  background: rgba(200, 160, 74, 0.06);
+}
+
+.ad2-action-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(11, 42, 58, 0.08);
+  border: 1px solid rgba(11, 42, 58, 0.14);
+  color: var(--hotel-navy);
+  font-size: 18px;
+}
+
+.ad2-action-title {
+  font-weight: 950;
+  color: var(--text-main);
+}
+
+.ad2-action-sub {
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--text-muted);
+}

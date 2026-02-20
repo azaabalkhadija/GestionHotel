@@ -1,0 +1,240 @@
+/* Everything is scoped inside .cbrx-root to defeat global CSS */
+.cbrx-root {
+  min-height: 100vh;
+  background: #f6f7fb;
+  padding: 24px 14px 40px;
+}
+
+/* isolate sizing */
+.cbrx-root * {
+  box-sizing: border-box;
+}
+
+/* layout */
+.cbrx-shell {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.cbrx-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.cbrx-title {
+  margin: 0;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+}
+
+.cbrx-subtitle {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-weight: 650;
+  font-size: 13px;
+}
+
+.cbrx-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 16px;
+}
+
+.cbrx-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+}
+
+.cbrx-cardhead {
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.cbrx-formhint {
+  margin: -4px 0 12px;
+  color: #64748b;
+  font-weight: 650;
+  font-size: 13px;
+}
+
+/* alerts */
+.cbrx-alert {
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-weight: 750;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.cbrx-alert-danger {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+}
+
+.cbrx-alert-success {
+  background: rgba(34, 197, 94, 0.10);
+  border: 1px solid rgba(34, 197, 94, 0.20);
+  color: #166534;
+}
+
+/* summary */
+.cbrx-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: #0f172a;
+  font-weight: 650;
+}
+
+.cbrx-line span {
+  color: #64748b;
+  font-weight: 750;
+}
+
+.cbrx-pill {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(53, 108, 140, 0.10);
+  border: 1px solid rgba(53, 108, 140, 0.18);
+  color: #356c8c;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.cbrx-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  margin: 12px 0;
+}
+
+.cbrx-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+}
+
+.cbrx-total span {
+  color: #64748b;
+  font-weight: 800;
+}
+
+.cbrx-total b {
+  font-weight: 1000;
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.cbrx-note {
+  margin-top: 10px;
+  color: #94a3b8;
+  font-weight: 650;
+  font-size: 12px;
+}
+
+/* form grid */
+.cbrx-form {
+  margin-top: 6px;
+}
+
+.cbrx-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+}
+
+.cbrx-field-full {
+  grid-column: 1 / -1;
+}
+
+.cbrx-label {
+  display: block;
+  font-weight: 900;
+  color: #0f172a;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+/* IMPORTANT: strong scoped selectors to override style.css + bootstrap */
+.cbrx-root .cbrx-control {
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 10px 12px;
+  font-weight: 650;
+  background: #fff;
+  color: #0f172a;
+  outline: none;
+  line-height: 1.2;
+  box-shadow: none;
+  appearance: none;
+}
+
+.cbrx-root .cbrx-control:focus {
+  border-color: rgba(53, 108, 140, 0.45);
+  box-shadow: 0 0 0 4px rgba(53, 108, 140, 0.10);
+}
+
+/* buttons */
+.cbrx-btn {
+  height: 44px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 0 14px;
+  transition: background 0.12s ease, opacity 0.12s ease;
+}
+
+.cbrx-btn-primary {
+  width: 100%;
+  margin-top: 14px;
+  border: 1px solid rgba(53, 108, 140, 0.22);
+  background: rgba(53, 108, 140, 0.08);
+  color: #0f172a;
+}
+
+.cbrx-btn-primary:hover {
+  background: rgba(53, 108, 140, 0.12);
+}
+
+.cbrx-btn-ghost {
+  background: #fff;
+  color: #0f172a;
+}
+
+.cbrx-btn-ghost:hover {
+  background: rgba(53, 108, 140, 0.06);
+}
+
+.cbrx-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .cbrx-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .cbrx-fields {
+    grid-template-columns: 1fr;
+  }
+}

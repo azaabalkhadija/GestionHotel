@@ -1,0 +1,213 @@
+/* src/css/adminClientsList.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.acl-root {
+  padding: 10px 10px 30px 10px;
+}
+
+.acl-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.acl-title {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.acl-subtitle {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-weight: 650;
+  font-size: 13px;
+}
+
+/* Search */
+.acl-search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.acl-input {
+  width: 320px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  padding: 10px 12px;
+  font-weight: 650;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  color: var(--text-main);
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.acl-input:focus {
+  border-color: rgba(200, 160, 74, 0.55);
+  box-shadow: 0 0 0 4px rgba(200, 160, 74, 0.14);
+}
+
+/* Buttons */
+.acl-btn {
+  height: 44px;
+  border-radius: 12px;
+  font-weight: 950;
+  cursor: pointer;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  padding: 0 14px;
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease, opacity 0.12s ease;
+}
+
+.acl-btn:active {
+  transform: translateY(1px);
+}
+
+.acl-btn-primary {
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: linear-gradient(180deg, rgba(11, 42, 58, 0.10) 0%, rgba(200, 160, 74, 0.10) 100%);
+  color: var(--hotel-navy);
+}
+
+.acl-btn-primary:hover {
+  background: linear-gradient(180deg, rgba(11, 42, 58, 0.14) 0%, rgba(200, 160, 74, 0.14) 100%);
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.acl-btn-ghost {
+  background: #fff;
+  color: var(--text-main);
+}
+
+.acl-btn-ghost:hover {
+  background: rgba(11, 42, 58, 0.05);
+  border-color: rgba(11, 42, 58, 0.18);
+}
+
+.acl-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alerts */
+.acl-alert {
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+
+.acl-alert-danger {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+}
+
+/* Card */
+.acl-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* premium top accent */
+.acl-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(11, 42, 58, 0.45), rgba(200, 160, 74, 0.55));
+  opacity: 0.65;
+}
+
+.acl-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 650;
+  margin-top: 6px;
+}
+
+/* Table */
+.acl-tablewrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 6px;
+}
+
+.acl-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.acl-table thead th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 950;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.acl-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text-main);
+  font-weight: 650;
+  vertical-align: middle;
+}
+
+/* Row hover (nice hotel system feel) */
+.acl-table tbody tr:hover td {
+  background: rgba(200, 160, 74, 0.06);
+}
+
+.acl-strong {
+  font-weight: 950;
+}
+
+/* Footer */
+.acl-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 6px 2px 6px;
+  color: var(--text-muted);
+  font-weight: 750;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .acl-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acl-input {
+    width: 260px;
+  }
+}

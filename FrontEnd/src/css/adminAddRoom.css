@@ -1,0 +1,208 @@
+/* src/css/adminAddRoom.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.aar-page {
+  padding: 10px 10px 30px;
+}
+
+/* Header */
+.aar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.aar-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.aar-header p {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+/* Back button */
+.aar-back {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: rgba(200, 160, 74, 0.10);
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--hotel-navy);
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.aar-back:hover {
+  background: rgba(200, 160, 74, 0.16);
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.aar-back:active {
+  transform: translateY(1px);
+}
+
+/* Alerts */
+.aar-alert {
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  border: 1px solid transparent;
+}
+
+.aar-alert-danger {
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+}
+
+.aar-alert-success {
+  background: rgba(16, 185, 129, 0.10);
+  border-color: rgba(16, 185, 129, 0.18);
+  color: #065f46;
+}
+
+/* Card */
+.aar-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* premium top accent */
+.aar-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(11, 42, 58, 0.45), rgba(200, 160, 74, 0.55));
+  opacity: 0.65;
+}
+
+/* Form */
+.aar-form {
+  width: 100%;
+}
+
+.aar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 6px; /* gives space under accent line */
+}
+
+@media (max-width: 900px) {
+  .aar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aar-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aar-field label {
+  font-weight: 900;
+  color: var(--text-main);
+  font-size: 13px;
+}
+
+/* Inputs */
+.aar-field input,
+.aar-field select {
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  outline: none;
+  font-weight: 650;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.aar-field input::placeholder {
+  color: rgba(100, 116, 139, 0.9);
+}
+
+.aar-field input:focus,
+.aar-field select:focus {
+  border-color: rgba(200, 160, 74, 0.55);
+  box-shadow: 0 0 0 3px rgba(200, 160, 74, 0.16);
+}
+
+.aar-full {
+  grid-column: 1 / -1;
+}
+
+/* Actions */
+.aar-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.aar-btn {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 950;
+  cursor: pointer;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.aar-btn:active {
+  transform: translateY(1px);
+}
+
+.aar-btn-primary {
+  background: linear-gradient(180deg, rgba(11, 42, 58, 0.10) 0%, rgba(200, 160, 74, 0.10) 100%);
+  border-color: rgba(200, 160, 74, 0.35);
+  color: var(--hotel-navy);
+}
+
+.aar-btn-primary:hover {
+  background: linear-gradient(180deg, rgba(11, 42, 58, 0.14) 0%, rgba(200, 160, 74, 0.14) 100%);
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.aar-btn-ghost {
+  background: #fff;
+  color: var(--text-main);
+}
+
+.aar-btn-ghost:hover {
+  background: rgba(11, 42, 58, 0.05);
+  border-color: rgba(11, 42, 58, 0.18);
+}
+
+.aar-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,282 @@
+/* src/css/roomDetails.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rd-page {
+  padding: 10px 10px 30px 10px;
+}
+
+.rd-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Back button (gold accent) */
+.rd-back {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: rgba(200, 160, 74, 0.10);
+  cursor: pointer;
+  font-weight: 950;
+  color: var(--hotel-navy);
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.rd-back:hover {
+  background: rgba(200, 160, 74, 0.16);
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.rd-back:active {
+  transform: translateY(1px);
+}
+
+.rd-title h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.rd-title p {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+/* Edit button (navy + gold hint) */
+.rd-edit {
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-weight: 950;
+  cursor: pointer;
+
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.10) 0%,
+    rgba(200, 160, 74, 0.10) 100%
+  );
+  color: var(--hotel-navy);
+
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.rd-edit:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.14) 0%,
+    rgba(200, 160, 74, 0.14) 100%
+  );
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.rd-edit:active {
+  transform: translateY(1px);
+}
+
+/* Alerts */
+.rd-alert {
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  border: 1px solid transparent;
+}
+
+.rd-alert.danger {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+}
+
+.rd-alert.success {
+  background: rgba(34, 197, 94, 0.10);
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  color: #166534;
+}
+
+/* Card */
+.rd-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* premium top accent */
+.rd-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 58, 0.45),
+    rgba(200, 160, 74, 0.55)
+  );
+  opacity: 0.65;
+}
+
+.rd-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 650;
+  margin-top: 6px;
+}
+
+/* View grid */
+.rd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .rd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Info items */
+.rd-item {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(200, 160, 74, 0.03) 100%);
+}
+
+.rd-item span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.rd-item b {
+  color: var(--text-main);
+  font-weight: 950;
+  word-break: break-word;
+}
+
+/* Form grid */
+.rd-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .rd-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rd-field label {
+  display: block;
+  font-weight: 950;
+  color: var(--text-main);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.rd-field input,
+.rd-field select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  outline: none;
+  font-weight: 650;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.rd-field input:focus,
+.rd-field select:focus {
+  border-color: rgba(200, 160, 74, 0.55);
+  box-shadow: 0 0 0 3px rgba(200, 160, 74, 0.16);
+}
+
+.rd-full {
+  grid-column: 1 / -1;
+}
+
+/* Actions */
+.rd-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.rd-btn {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 950;
+  cursor: pointer;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: #fff;
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease, opacity 0.12s ease;
+}
+
+.rd-btn:active {
+  transform: translateY(1px);
+}
+
+.rd-btn.primary {
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.10) 0%,
+    rgba(200, 160, 74, 0.10) 100%
+  );
+  color: var(--hotel-navy);
+}
+
+.rd-btn.primary:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.14) 0%,
+    rgba(200, 160, 74, 0.14) 100%
+  );
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.rd-btn.ghost {
+  color: var(--text-main);
+}
+
+.rd-btn.ghost:hover {
+  background: rgba(11, 42, 58, 0.05);
+  border-color: rgba(11, 42, 58, 0.18);
+}
+
+.rd-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

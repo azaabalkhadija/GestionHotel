@@ -1,0 +1,29 @@
+/* Layout.css */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;          /* ✅ instead of height: 120vh */
+}
+
+/* the row that contains Aside + page content */
+.main-content-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;             /* ✅ VERY IMPORTANT for scroll/flex children */
+}
+
+/* sidebar */
+.aside {
+  flex: 0 0 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* main page content */
+.body-content-layout {
+  flex: 1;
+  padding: 20px;
+  min-height: 0;             /* ✅ allows scrolling properly */
+  overflow: auto;            /* ✅ scroll inside content when needed */
+}

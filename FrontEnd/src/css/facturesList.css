@@ -1,0 +1,303 @@
+/* src/css/facturesList.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.fact-page {
+  padding: 10px 10px 30px 10px;
+}
+
+/* Header */
+.fact-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fact-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.fact-header p {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+/* Refresh button (gold accent) */
+.fact-refresh {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: rgba(200, 160, 74, 0.10);
+  cursor: pointer;
+  font-weight: 950;
+  color: var(--hotel-navy);
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease, opacity 0.12s ease;
+}
+
+.fact-refresh:hover {
+  background: rgba(200, 160, 74, 0.16);
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.fact-refresh:active {
+  transform: translateY(1px);
+}
+
+.fact-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alert */
+.fact-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 850;
+}
+
+/* -------------------------------
+   Card
+--------------------------------- */
+
+.fact-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* premium top accent */
+.fact-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 58, 0.45),
+    rgba(200, 160, 74, 0.55)
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Filters card spacing */
+.fact-filters {
+  margin-bottom: 12px;
+}
+
+.fact-filters-form {
+  width: 100%;
+}
+
+/* Filters grid */
+.fact-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 6px; /* breathing room from accent line */
+}
+
+@media (max-width: 1100px) {
+  .fact-filters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .fact-filters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Field styles */
+.fact-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* Keep client name same “simple” input, just themed */
+.fact-field input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  color: var(--text-main);
+  font-weight: 700;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.fact-field input:focus {
+  border-color: rgba(200, 160, 74, 0.55);
+  box-shadow: 0 0 0 4px rgba(200, 160, 74, 0.14);
+}
+
+/* Actions */
+.fact-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.fact-btn {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 950;
+  color: var(--text-main);
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease, opacity 0.12s ease;
+}
+
+.fact-btn:hover {
+  background: rgba(11, 42, 58, 0.05);
+  border-color: rgba(11, 42, 58, 0.18);
+}
+
+.fact-btn:active {
+  transform: translateY(1px);
+}
+
+.fact-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Apply button */
+.fact-btn:not(.fact-btn-ghost) {
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.10) 0%,
+    rgba(200, 160, 74, 0.10) 100%
+  );
+  color: var(--hotel-navy);
+}
+
+.fact-btn:not(.fact-btn-ghost):hover {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.14) 0%,
+    rgba(200, 160, 74, 0.14) 100%
+  );
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+/* Clear button */
+.fact-btn-ghost {
+  background: #fff;
+  color: var(--text-main);
+}
+
+/* -------------------------------
+   Table / content
+--------------------------------- */
+
+.fact-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 750;
+  margin-top: 6px;
+}
+
+.fact-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 6px;
+}
+
+.fact-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.fact-table thead th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 950;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  white-space: nowrap;
+}
+
+/* body */
+.fact-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text-main);
+  font-weight: 650;
+  vertical-align: top;
+}
+
+/* clickable rows hover (hotel feel) */
+.fact-table tbody tr:hover td {
+  background: rgba(200, 160, 74, 0.06);
+}
+
+.fact-strong {
+  font-weight: 950;
+}
+
+.fact-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 750;
+  margin-top: 3px;
+}
+
+.fact-amount {
+  font-weight: 950;
+  color: var(--hotel-navy);
+}
+
+/* Footer */
+.fact-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 6px 2px 6px;
+  color: var(--text-muted);
+  font-weight: 850;
+  font-size: 13px;
+}
+
+.fact-total b {
+  color: var(--hotel-navy);
+}

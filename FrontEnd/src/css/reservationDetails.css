@@ -1,0 +1,330 @@
+/* src/css/reservationDetails.css */
+/* Staff theme: navy + gold accents, consistent with reception dashboard */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rrd-page {
+  padding: 10px 10px 30px 10px;
+}
+
+.rrd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.rrd-header h2 {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.rrd-header p {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-weight: 750;
+}
+
+.rrd-header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Card */
+.rrd-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium top accent inside the card (not too close) */
+.rrd-card::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 14px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 58, 0.45),
+    rgba(200, 160, 74, 0.55)
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.rrd-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.rrd-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 850;
+}
+
+/* Buttons */
+.rrd-btn {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--text-main);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s ease, border 0.12s ease, transform 0.05s ease;
+}
+
+.rrd-btn:hover {
+  background: rgba(200, 160, 74, 0.06);
+  border-color: rgba(200, 160, 74, 0.35);
+}
+
+.rrd-btn:active {
+  transform: translateY(1px);
+}
+
+.rrd-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rrd-btn-primary {
+  border-color: rgba(200, 160, 74, 0.38);
+  background: rgba(200, 160, 74, 0.12);
+}
+
+.rrd-btn-primary:hover {
+  background: rgba(200, 160, 74, 0.16);
+}
+
+.rrd-btn-ghost {
+  background: #fff;
+}
+
+.rrd-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 12px;
+}
+
+/* Top summary */
+.rrd-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px; /* space under accent */
+}
+
+.rrd-top-left,
+.rrd-top-right {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rrd-kpi,
+.rrd-mini {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(11, 42, 58, 0.02);
+  border-radius: 16px;
+  padding: 12px;
+  min-width: 190px;
+}
+
+.rrd-mini {
+  min-width: 160px;
+}
+
+.rrd-kpi-label,
+.rrd-mini-label {
+  font-size: 12px;
+  font-weight: 950;
+  color: var(--text-muted);
+}
+
+.rrd-kpi-value,
+.rrd-mini-value {
+  margin-top: 6px;
+  font-weight: 950;
+  color: var(--text-main);
+}
+
+.rrd-divider {
+  height: 1px;
+  background: rgba(15, 23, 42, 0.08);
+  margin: 14px 0;
+}
+
+/* Details grid */
+.rrd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .rrd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rrd-section {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.rrd-section-full {
+  grid-column: 1 / -1;
+}
+
+.rrd-section-title {
+  font-weight: 950;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+/* Key/Value pairs */
+.rrd-pair {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(15, 23, 42, 0.08);
+}
+
+.rrd-pair:last-child {
+  border-bottom: none;
+}
+
+.rrd-key {
+  color: var(--text-muted);
+  font-weight: 950;
+  font-size: 12px;
+}
+
+.rrd-val {
+  color: var(--text-main);
+  font-weight: 850;
+  text-align: right;
+}
+
+.rrd-muted {
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+/* Room pills */
+.rrd-room-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 1100px) {
+  .rrd-room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .rrd-room-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rrd-room-pill {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(11, 42, 58, 0.02);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.rrd-room-pill-label {
+  display: block;
+  color: var(--text-muted);
+  font-weight: 950;
+  font-size: 12px;
+}
+
+.rrd-room-pill-value {
+  display: block;
+  margin-top: 6px;
+  font-weight: 950;
+  color: var(--text-main);
+}
+
+/* Status badge */
+.rrd-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 950;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(11, 42, 58, 0.03);
+  color: var(--text-main);
+}
+
+/* Specific statuses (your code lowercases statut) */
+.rrd-badge-en_attente {
+  background: rgba(200, 160, 74, 0.12);
+  border-color: rgba(200, 160, 74, 0.25);
+  color: #7a5a16;
+}
+
+.rrd-badge-confirmee {
+  background: rgba(11, 42, 58, 0.08);
+  border-color: rgba(11, 42, 58, 0.18);
+  color: var(--hotel-navy);
+}
+
+.rrd-badge-en_cours {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.22);
+  color: #065f46;
+}
+
+.rrd-badge-terminee {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.22);
+  color: #3730a3;
+}
+
+.rrd-badge-annulee {
+  background: rgba(220, 38, 38, 0.10);
+  border-color: rgba(220, 38, 38, 0.20);
+  color: #991b1b;
+}

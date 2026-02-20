@@ -1,0 +1,237 @@
+/* src/css/FactureDetails.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rfacd-page {
+  padding: 10px 10px 30px;
+}
+
+/* Header */
+.rfacd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.rfacd-title {
+  margin: 0;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.rfacd-subtitle {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+/* Back button (gold accent, like staff) */
+.rfacd-back {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: rgba(200, 160, 74, 0.10);
+  cursor: pointer;
+  font-weight: 950;
+  color: var(--hotel-navy);
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease;
+}
+
+.rfacd-back:hover {
+  background: rgba(200, 160, 74, 0.16);
+  border-color: rgba(200, 160, 74, 0.50);
+}
+
+.rfacd-back:active {
+  transform: translateY(1px);
+}
+
+/* Alert */
+.rfacd-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 850;
+}
+
+/* Card */
+.rfacd-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* premium top accent */
+.rfacd-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 58, 0.45),
+    rgba(200, 160, 74, 0.55)
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.rfacd-empty {
+  padding: 18px;
+  color: var(--text-muted);
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+/* Top pills */
+.rfacd-top {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  margin-top: 6px; /* gives breathing room from accent line */
+}
+
+.rfacd-pill {
+  border-radius: 14px;
+  padding: 10px 12px;
+  min-width: 220px;
+  border: 1px solid rgba(200, 160, 74, 0.26);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.06) 0%,
+    rgba(200, 160, 74, 0.06) 100%
+  );
+}
+
+.rfacd-pill span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 950;
+}
+
+.rfacd-pill strong {
+  display: block;
+  font-size: 16px;
+  color: var(--text-main);
+  font-weight: 950;
+  margin-top: 2px;
+}
+
+/* Grid */
+.rfacd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .rfacd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sections */
+.rfacd-section {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(15,23,42,0.01) 100%);
+}
+
+.rfacd-section h4 {
+  margin: 0 0 10px;
+  font-weight: 950;
+  color: var(--text-main);
+  letter-spacing: -0.1px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* subtle underline */
+.rfacd-section h4::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 56px;
+  border-radius: 999px;
+  background: rgba(200, 160, 74, 0.55);
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.rfacd-section p {
+  margin: 6px 0;
+  color: var(--text-main);
+  font-weight: 650;
+}
+
+.rfacd-section p b {
+  font-weight: 900;
+  color: rgba(11, 42, 58, 0.95);
+}
+
+/* Totals box */
+.rfacd-total {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 42, 58, 0.05) 0%,
+    rgba(200, 160, 74, 0.06) 100%
+  );
+  border-color: rgba(200, 160, 74, 0.22);
+}
+
+.rfacd-total-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  font-weight: 850;
+  color: var(--text-main);
+}
+
+.rfacd-total-line strong {
+  font-weight: 950;
+}
+
+.rfacd-total-line.big {
+  border-bottom: none;
+  padding-top: 12px;
+  font-size: 18px;
+}
+
+.rfacd-total-line.big strong {
+  color: var(--hotel-navy);
+}
+
+/* Note */
+.rfacd-note {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-weight: 750;
+}

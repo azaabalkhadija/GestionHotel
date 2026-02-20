@@ -1,0 +1,218 @@
+/* src/css/aside.css */
+/* Hotel-Classy Sidebar Theme (Navy + Sand + Gold Accent) */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+  --hotel-sand: #fbf7ef;
+  --hotel-cream: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Sidebar container */
+.sidebaraside {
+  width: 280px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  border-right: 1px solid var(--card-border);
+
+  /* subtle hotel vibe */
+  background: linear-gradient(180deg, var(--hotel-cream) 0%, var(--hotel-sand) 100%);
+  padding: 18px 14px;
+  position: relative;
+}
+
+/* Accent bar (hotel feel) */
+.sidebaraside::before {
+  content: "";
+  position: sticky;
+  top: 0;
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--hotel-navy), var(--hotel-gold));
+  margin-bottom: 12px;
+}
+
+/* Profile card */
+.profileaside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 18px 12px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Reception picture */
+.profile-picaside {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  background: #f1f5f9;
+}
+
+/* Info */
+.profile-infoaside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.username {
+  font-weight: 900;
+  color: var(--text-main);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Role pill */
+.role-badge {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--hotel-navy);
+  background: rgba(200, 160, 74, 0.12);
+  border: 1px solid rgba(200, 160, 74, 0.30);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Admin avatar */
+.admin-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+
+  background: linear-gradient(180deg, var(--hotel-navy) 0%, var(--hotel-navy-2) 100%);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  font-weight: 950;
+  margin-bottom: 10px;
+
+  border: 1px solid rgba(200, 160, 74, 0.35);
+  box-shadow: 0 12px 28px rgba(11, 42, 58, 0.16);
+}
+
+/* Divider */
+.divideraside {
+  height: 1px;
+  background: rgba(15, 23, 42, 0.10);
+  margin: 14px 6px;
+}
+
+/* Menu */
+.sidebar-menuaside {
+  list-style: none;
+  padding: 0 6px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-menuaside li a {
+  text-decoration: none;
+}
+
+/* NavLink */
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 14px;
+
+  background: transparent;
+  border: 1px solid transparent;
+
+  font-weight: 800;
+  transition: background 0.15s ease, border 0.15s ease, transform 0.05s ease;
+}
+
+.menu-link:hover {
+  background: rgba(11, 42, 58, 0.06);
+  border: 1px solid rgba(11, 42, 58, 0.12);
+}
+
+.menu-link:active {
+  transform: translateY(1px);
+}
+
+/* Active link (gold accent but still classy) */
+.menu-link.active {
+  background: rgba(200, 160, 74, 0.14);
+  border: 1px solid rgba(200, 160, 74, 0.35);
+}
+
+/* Icon wrapper */
+.iconwrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.iconwrap i {
+  color: #475569;
+}
+
+/* Active icon tint */
+.menu-link.active .iconwrap {
+  background: rgba(11, 42, 58, 0.10);
+  border: 1px solid rgba(11, 42, 58, 0.14);
+}
+
+.menu-link.active .iconwrap i {
+  color: var(--hotel-navy);
+}
+
+/* IMPORTANT FIX: prevent global/template CSS making links white */
+.sidebaraside .menu-link,
+.sidebaraside .menu-link:visited,
+.sidebaraside .menu-link:focus {
+  color: var(--text-main) !important;
+  text-decoration: none !important;
+}
+
+.sidebaraside .menu-link:hover {
+  color: var(--text-main) !important;
+}
+
+.sidebaraside .menu-link.active {
+  color: var(--text-main) !important;
+}
+
+.sidebaraside .menu-link span {
+  color: inherit !important;
+}
+
+.sidebaraside .menu-link i {
+  color: #475569 !important;
+}
+
+.sidebaraside .menu-link.active i {
+  color: var(--hotel-navy) !important;
+}

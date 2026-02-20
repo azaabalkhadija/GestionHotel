@@ -1,0 +1,164 @@
+/* src/css/roomslist.css */
+
+:root {
+  --hotel-navy: #0b2a3a;
+  --hotel-navy-2: #10384c;
+  --hotel-gold: #c8a04a;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-border: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.users-list-container {
+  padding: 10px 10px 30px 10px;
+}
+
+/* Title */
+.users-list-container h2 {
+  margin: 0 0 14px 0;
+  font-weight: 950;
+  color: var(--text-main);
+  text-align: left;
+  letter-spacing: -0.2px;
+}
+
+/* Table Card */
+.Userstable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  position: relative;
+}
+
+/* premium top accent */
+.Userstable::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 8px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 58, 0.45),
+    rgba(200, 160, 74, 0.55)
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Head */
+.Userstable thead th {
+  text-align: left;
+  padding: 20px 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 950;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(15, 23, 42, 0.02);
+  white-space: nowrap;
+}
+
+/* Body cells */
+.Userstable tbody td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text-main);
+  font-weight: 650;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Zebra */
+.Userstable tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.015);
+}
+
+/* Hover row */
+.Userstable tbody tr:hover td {
+  background: rgba(200, 160, 74, 0.06);
+}
+
+/* Last row border */
+.Userstable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cell-strong {
+  font-weight: 950;
+}
+
+/* Make table scrollable on small screens */
+@media (max-width: 1100px) {
+  .Userstable {
+    display: block;
+    overflow-x: auto;
+    min-width: 900px;
+  }
+}
+
+/* ✅ Correct status badge column = 6th column (Etat), not last column */
+.Userstable tbody td:nth-child(6) {
+  font-weight: 950;
+  color: var(--hotel-navy);
+}
+
+.Userstable tbody td:nth-child(6)::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(200, 160, 74, 0.65);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Empty row */
+.rooms-empty {
+  text-align: center !important;
+  padding: 18px !important;
+  color: var(--text-muted) !important;
+  font-weight: 800 !important;
+}
+
+/* Row click */
+.click-row {
+  cursor: pointer;
+}
+
+/* Actions */
+.Actionbutton button {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(220, 38, 38, 0.22);
+  background: rgba(220, 38, 38, 0.08);
+  color: #991b1b;
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform 0.05s ease, background 0.15s ease, border 0.15s ease, opacity 0.12s ease;
+}
+
+.Actionbutton button:hover {
+  background: rgba(220, 38, 38, 0.12);
+  border-color: rgba(220, 38, 38, 0.32);
+}
+
+.Actionbutton button:active {
+  transform: translateY(1px);
+}
+
+.Actionbutton button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
